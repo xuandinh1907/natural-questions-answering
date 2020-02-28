@@ -1,5 +1,6 @@
-# natural-questions-answering
 # Overview
+![](images/tf2_QA_competition.png)
+
 *"Why is the sky blue ?"*
 
 This is a question an open - domain QA system should be able to respond to . QA systems emulate how people look for information by 
