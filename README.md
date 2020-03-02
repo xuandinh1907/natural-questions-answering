@@ -3,35 +3,32 @@
 
 *"Why is the sky blue ?"*
 
-This is a question an open - domain QA system should be able to respond to . QA systems emulate how people look for information by 
-reading the web to return answers to common questions.Machine Learning can be used to improve the accuracy of these answers.
+<p align="justify">This is a question an open - domain QA system should be able to respond to . QA systems emulate how people look for information by reading the web to return answers to common questions.Machine Learning can be used to improve the accuracy of these answers.</p>
 
-Existing natural language models have been focused on extracting anwers from a short paragraph rather than reading an entire page of 
-content for proper context.As a result,the responses can be complicated or lengthy.A good answer will be both succint and relevant.
+<p align="justify">Existing natural language models have been focused on extracting anwers from a short paragraph rather than reading an entire page of content for proper context.As a result,the responses can be complicated or lengthy.A good answer will be both succint and relevant.In this competition,our goal is ti predict short and long answer responses to real questions about Wikipedia articles.</p>
 
-In this competition,our goal is ti predict short and long answer responses to real questions about Wikipedia articles. This dataset is 
-provided by [Google Natural's Question](https://ai.google.com/research/NaturalQuestions/dataset),but contains its own unique private 
-test set. A [Visualization of examples](https://ai.google.com/research/NaturalQuestions/visualization) shows long and 
-where available short  answers.In addition to prizes for the top teams,there is a special set of awards for using Tensorflow 2.0 APIs
+This dataset is provided by [Google Natural's Question](https://ai.google.com/research/NaturalQuestions/dataset),but contains its own unique private test set. 
 
-If successful,this challenge will help spur the development of more effective and robust QA systems
+A [Visualization of examples](https://ai.google.com/research/NaturalQuestions/visualization) shows long and where available short  answers.
+
+<p align="justify">In addition to prizes for the top teams,there is a special set of awards for using Tensorflow 2.0 APIs.If successful,this challenge will help spur the development of more effective and robust QA systems</p>
 
 # Data
 In this competition , Kaggle help us select the best short and long answers from Wikipedia articles to the given questions
+
 ## What should I expect the data format to be ?
-Each sample contains a Wikipedia article , a related question,and the candidate long form answers.The training examples also provide the 
-correct long and short form answer or answers for the example,if any exist.
+<p align="justify">Each sample contains a Wikipedia article , a related question,and the candidate long form answers.The training examples also provide the correct long and short form answer or answers for the example,if any exist.</p>
+
 ## What am I predicting ?
-For each article + question pair,I must predict/select long and short answer form answers to the question drawn directly from the 
-article
+<p align="justify">For each article + question pair,I must predict/select long and short answer form answers to the question drawn directly from the article</p>
 - A long anwer would be a longer section of text that answers the question,serveral sentences or a paragraph
 - A short answer might be a sentence or phrase,or even in some cases a YES/NO.The short answers are always contained within/a subset of 
 one of the plausible long answers.
 - A given article can (or very often) allow for both long and short answers,depending on the question
 
 There is more detail about the data [on the Github page for the Natural Questions dataset](https://github.com/google-research-datasets/natural-questions/blob/master/README.md).
-This page also contains helpful utilities and scripts.Note that I am using the simplified text version of the data - most of the HTML 
-tags have been removed,and only those necessary to break up papragraphs sections are included
+
+<p align="justify">This page also contains helpful utilities and scripts.Note that I am using the simplified text version of the data - most of the HTML tags have been removed,and only those necessary to break up papragraphs sections are included</p>
 
 ## File descriptions
 - simplified-nq-train.jsonl : the training data,in newline-delimited JSON format
@@ -50,13 +47,12 @@ Only provided for train.
 - **example_id**: unique ID for the sample.
 
 # Evaluation
-Submissions are evaluated using [micro F1](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html) between the 
-predicted and expected answers.Predicted long and short answers must match exactly the token indices of one of the ground truth labels 
-(or match YES/NO if the question has a yes/no short answer).There maybe up to five labels for long answers,and more for short.If no 
-answer applies,leave the prediction blank/null.
+Submissions are evaluated using [micro F1](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html) between the predicted and expected answers.
+
+<p align="justify">Predicted long and short answers must match exactly the token indices of one of the ground truth labels (or match YES/NO if the question has a yes/no short answer).There maybe up to five labels for long answers,and more for short.If no answer applies,leave the prediction blank/null.</p>
 
 The metric in this competition diverges from the 
-[original metric](https://github.com/google-research-datasets/natural-questions/blob/master/nq_eval.py) in 2 key respects :
+[original metric](https://github.com/google-research-datasets/natural-questions/blob/master/nq_eval.py) in 2 key respects:
 - short and long answer formats do not receive separate scores,but are instead combined into a 
 [micro F1](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html) score acorss both formats
 - this competition metric does *not* use `confidence` scores to find an optimal threshold for predictions
