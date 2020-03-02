@@ -21,9 +21,9 @@ In this competition , Kaggle help us select the best short and long answers from
 
 ## What am I predicting ?
 <p align="justify">For each article + question pair,I must predict/select long and short answer form answers to the question drawn directly from the article</p>
+
 - A long anwer would be a longer section of text that answers the question,serveral sentences or a paragraph
-- A short answer might be a sentence or phrase,or even in some cases a YES/NO.The short answers are always contained within/a subset of 
-one of the plausible long answers.
+- A short answer might be a sentence or phrase,or even in some cases a YES/NO.The short answers are always contained within/a subset of one of the plausible long answers.
 - A given article can (or very often) allow for both long and short answers,depending on the question
 
 There is more detail about the data [on the Github page for the Natural Questions dataset](https://github.com/google-research-datasets/natural-questions/blob/master/README.md).
